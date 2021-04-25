@@ -1,3 +1,4 @@
+@import url('https://fonts.google.com/specimen/Barlow+Semi+Condensed');
 *
 {
     margin:0px;
@@ -5,36 +6,55 @@
 }
 :root
 {
---bgc:hsl(39, 89%, 49%)  ;
-/* --Scissors linear-gradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%) */
-/* --Paper Gradient: hsl(230, 89%, 62%) to hsl(230, 89%, 65%)
---Rock Gradient: hsl(349, 71%, 52%) to hsl(349, 70%, 56%)
---Lizard Gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%)
---Cyan: hsl(189, 59%, 53%) to hsl(189, 58%, 57%)
---bg Gradient: hsl(214, 47%, 23%) to hsl(237, 49%, 15%) */
-/* hsl(39, 89%, 49%) */
+--bgc:rgba(27,43,76,255) ;
 }
 body
 {
+font-family:'Barlow';
 background-color:var(--bgc);
 margin: 1rem;
 padding-top: 1rem;
 color: white;
 }
-.center
+.headerwindow
 {
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70%;
-    border-radius: 5px;
-    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-    z-index: 10;
-    border-color: azure;
-    display: inline-block;
+    margin: 0px;
+    border: 2px solid rgb(161, 166, 173) ;
+    border-radius: 15px;
+    margin-left: 25%;
+    margin-right: 25%;
 }
-.right
+.logo
 {
-    text-align: right;
+    width: 50%;
+    float: left;
+    padding: 20px;
+}
+.scorewindow
+{
+    background-color: white;
+    border-color: var(--bgc);
+    float: right;
+    padding: 25px;
+    border-radius: 8px;
+    margin: 20px;
+    
+}
+.clearfix
+{
+    clear:both
+}
+.scorelabel
+{
+    position: relative;
+    color: var(--bgc);
+    font-weight: bold;
+    bottom: 15px;
+}
+.score
+{
+    color: var(--bgc);
+    font-weight: 900;
+    text-align: center;
+    font-size: 50px;
 }
