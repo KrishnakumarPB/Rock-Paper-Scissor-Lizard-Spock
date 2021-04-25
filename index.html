@@ -9,21 +9,38 @@
 
 </head>
 <body>
-<header >
-    <div class="container">
-        <div class="headerwindow">
-            <div class="logo">
-            <img src="/images/logo-bonus.svg" ></img>
+    <header >
+        <div class="container">
+            <div class="headerwindow">
+                <div class="logo">
+                <img src="/images/logo-bonus.svg" ></img>
+                </div>
+                <div class="scorewindow">
+                <p><span class="scorelabel">SCORE</span></p>
+                <p class="score">20</p>
+                </div>
+                <div class="clearfix"></div>
             </div>
-            <div class="scorewindow">
-            <p><span class="scorelabel">SCORE</span></p>
-            <p class="score">20</p>
-            </div>
-            <div class="clearfix"></div>
         </div>
+    </header>
+    <div class="objects">
+    <img class="pentagon" src="/images/bg-pentagon.svg" >
+            <button class="selectors scissors"><img  src="/images/icon-scissors.svg" alt="scissors" ></button>
+            <button class="selectors paper"><img  src="/images/icon-paper.svg" alt="paper" ></button>
+            <button class="selectors rock"><img  src="/images/icon-rock.svg" alt="rock" ></button>
+            <button class="selectors lizard"><img  src="/images/icon-lizard.svg" alt="lizard" ></button>
+            <button class="selectors spock"><img  src="/images/icon-spock.svg" alt="spock" ></button>
+        </img>
     </div>
-</header>
-
-  
+    <div class="rules hidden">
+        <img src="/images/image-rules-bonus.svg">
+        </img>
+        <button class="closerules">&times;</button>
+    </div>
+    <div class="left">
+        <button class="ruleslabel rulesbutton">RULES</button>
+    </div>
+<div class="overlay hidden"></div>
+<script src="/script.js"></script>
 </body>
 </html>
