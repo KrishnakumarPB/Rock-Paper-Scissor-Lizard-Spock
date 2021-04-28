@@ -24,15 +24,44 @@
         </div>
     </header>
     <div class="objects">
-    <img class="pentagon" src="/images/bg-pentagon.svg" >
-            <button class="selectors scissors"><img  src="/images/icon-scissors.svg" alt="scissors" ></button>
-            <button class="selectors paper"><img  src="/images/icon-paper.svg" alt="paper" ></button>
-            <button class="selectors rock"><img  src="/images/icon-rock.svg" alt="rock" ></button>
-            <button class="selectors lizard"><img  src="/images/icon-lizard.svg" alt="lizard" ></button>
-            <button class="selectors spock"><img  src="/images/icon-spock.svg" alt="spock" ></button>
-        </img>
+        <div class="selectors ">
+        <img class="pentagon" src="/images/bg-pentagon.svg"></img>
+            <div class="scissor">
+                <button ><img  src="/images/icon-scissors.svg" alt="scissors" ></button>
+            </div>
+            <div class="paper">
+                <button ><img  src="/images/icon-paper.svg" alt="paper" ></button>
+            </div>
+            <div class="rock">
+                <button><img  src="/images/icon-rock.svg" alt="rock" ></button>
+            </div>
+            <div class="lizard">
+                <button><img  src="/images/icon-lizard.svg" alt="lizard" ></button>
+            </div>
+            <div class="spock">
+                <button><img  src="/images/icon-spock.svg" alt="spock" ></button>
+            </div>
+        </div>
+        <div class="afterselection hidden">
+            <div class="userinput">
+                <P>YOU PICKED</P>
+                <div class="userpicked"></div>
+                <img src=""></img>
+            </div>
+            <div class="result">
+                <p>YOU WON</p>
+                <button class="playagain">PLAY AGAIN</button>
+            </div>
+            <div class="systeminput">
+                <p>THE HOUSE PICKED</P>
+                <div class="systempicked">
+                    <img src=""></img>
+                </div>
+            </div>
+        </div>
+        
     </div>
-    <div class="rules hidden">
+     <div class="rules hidden">
         <img src="/images/image-rules-bonus.svg">
         </img>
         <button class="closerules">&times;</button>
@@ -40,6 +69,11 @@
     <div class="left">
         <button class="ruleslabel rulesbutton">RULES</button>
     </div>
+    <!-- <div class="afterpick">
+        <div class="userpicked center">YOU PICKED</div>
+        <div class=""></div>
+        <div class="systempicked center">THE HOUSE PICKED</div>
+    </div>  -->
 <div class="overlay hidden"></div>
 <script src="/script.js"></script>
 </body>
