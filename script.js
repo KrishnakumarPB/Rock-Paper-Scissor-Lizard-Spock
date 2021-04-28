@@ -5,15 +5,22 @@ var objectIndex = Math.floor(Math.random() * playingObjects.length);
 var systemInput=playingObjects[objectIndex];
 var searchArray=[];
 var searchEle="";
+var currentScore=20;
 var objectsUrl=
 {
     "paper":"url('/images/icon-paper.svg')",
     "rock":"url('/images/icon-rock.svg')",
     "lizard":"url('/images/icon-lizard.svg')",
-    "scissor":"url('/images/icon-spock.svg')",
+    "scissor":"url('/images/icon-scissors.svg')",
     "spock":"url('/images/icon-spock.svg')"
 }
 // console.log(systemInput);
+//system input generator
+function systemInputGenerator()
+{
+    objectIndex = Math.floor(Math.random() * playingObjects.length);
+    return playingObjects[objectIndex];
+}
 //search arg function
 function searchArg(searchEle)
 {
@@ -54,15 +61,19 @@ function gameLogic(userInput,systemInput)
             winner="draw"
     if (winner===userInput)
     {
-        //user won
+        showWinner.textContent="YOU WIN";
+        currentScore=currentScore+1;
+        showScore.textContent=currentScore;
     }
     else if(winner==="draw")
     {
-        //draw
+        showWinner.textContent="DRAW"
     }
     else if(winner===systemInput)
     {
-        //system won
+        showWinner.textContent="YOU LOSE"
+        currentScore=currentScore-1;
+        showScore.textContent=currentScore;
     }
     console.log("user input="+userInput+"and systemInput="+systemInput)
     console.log("winner="+winner);
@@ -82,7 +93,9 @@ var showResult=document.querySelector(".afterselection");
 var selectors=document.querySelector(".selectors");
 const playAgain=document.querySelector(".playagain");
 const userPicked=document.querySelector(".userpicked");
-const systemPicked=document.querySelector("systempicked")
+const systemPicked=document.querySelector(".systempicked")
+var showWinner=document.querySelector(".winner");
+var showScore=document.querySelector(".score");
 selectors.classList.remove("hidden");
 rulesBtn.addEventListener("click",function(){
     console.log("clicked rules")
@@ -101,9 +114,7 @@ scissors.addEventListener("click",function(){
     selectors.classList.add("hidden");
     showResult.classList.remove("hidden");
     userPicked.style.backgroundImage = "url('/images/icon-scissors.svg')";
-    console.log(objectsUrl[systemInput]);
     systemPicked.style.backgroundImage=objectsUrl[systemInput];
-
 })
 rock.addEventListener("click",function(){
     console.log("clicked rock");
@@ -113,6 +124,7 @@ rock.addEventListener("click",function(){
     selectors.classList.add("hidden");
     showResult.classList.remove("hidden");
     userPicked.style.backgroundImage = "url('/images/icon-rock.svg')";
+    systemPicked.style.backgroundImage=objectsUrl[systemInput];
 })
 paper.addEventListener("click",function(){
     console.log("clicked paper");
@@ -122,6 +134,7 @@ paper.addEventListener("click",function(){
     selectors.classList.add("hidden");
     showResult.classList.remove("hidden");
     userPicked.style.backgroundImage = "url('/images/icon-paper.svg')";
+    systemPicked.style.backgroundImage=objectsUrl[systemInput];
 })
 lizard.addEventListener("click",function(){
     console.log("clicked lizard");
@@ -131,6 +144,7 @@ lizard.addEventListener("click",function(){
     selectors.classList.add("hidden");
     showResult.classList.remove("hidden");
     userPicked.style.backgroundImage = "url('/images/icon-lizard.svg')";
+    systemPicked.style.backgroundImage=objectsUrl[systemInput];
 })
 spock.addEventListener("click",function(){
     console.log("clicked spock");
@@ -140,9 +154,11 @@ spock.addEventListener("click",function(){
     selectors.classList.add("hidden");
     showResult.classList.remove("hidden");
     userPicked.style.backgroundImage = "url('/images/icon-spock.svg')";
+    systemPicked.style.backgroundImage=objectsUrl[systemInput];
 })
 playAgain.addEventListener("click",function(){
     selectors.classList.remove("hidden");
-    showResult.classList.add("hidden")
+    showResult.classList.add("hidden");
+    systemInput=systemInputGenerator();
 })
 
